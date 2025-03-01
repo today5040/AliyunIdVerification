@@ -93,7 +93,7 @@ public class AlibabaCloudApi
             CertType = "IDENTITY_CARD",
             CertNo = model.CertNo,
             CertName = model.CertName,
-            ReturnUrl = "http://120.26.76.224:5040/Verification/result",
+            ReturnUrl = "https://help.aliyun.com",
             MetaInfo = model.MetaInfo,
             //Mobile = "18137471138",
             //Ip = model.IP,
