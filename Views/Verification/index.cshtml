@@ -1,0 +1,36 @@
+﻿@model AliyunIdVerification.Models.VerifyModel
+@{
+}
+@section Scripts {
+    <script>
+        // 在调用实人认证服务端发起认证请求时需要传入该MetaInfo值
+        let MetaInfo = window.getMetaInfo();
+        $("#MetaInfo").val(JSON.stringify(MetaInfo))
+    </script>
+}
+<div>
+    人脸认证开始
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="MetaInfo" />
+        <div class="form-group">
+            <label class="control-label">业务标识</label>
+            <input asp-for="OuterOrderNo" class="form-control" />
+            <span asp-validation-for="OuterOrderNo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">真实姓名</label>
+            <input asp-for="CertName" class="form-control" />
+            <span asp-validation-for="CertName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">身份证号</label>
+            <input asp-for="CertNo" class="form-control" />
+            <span asp-validation-for="CertNo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button form-type="submit">提交</button>
+            <button form-type="reset">重置</button>
+        </div>
+    </form>
+</div>
